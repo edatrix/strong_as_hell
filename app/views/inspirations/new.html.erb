@@ -1,0 +1,11 @@
+<div class="container-fluid body">
+  <div class="col-md-6">
+    <%= simple_form_for @inspiration, html: { :class => 'form-horizontal' } do |f| %>
+      <%= render "error_messages", :target => @inspiration %>
+      <%= f.input :name %>
+      <%= f.file_field :image %>
+      <%= f.input :text %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<% if target.errors.any? %>
+
+<div class="alert-form-error">
+  <p><strong><%= pluralize(target.errors.count, "error") %> prevented saving your responses:</strong></p>
+  <ul>
+  <% target.errors.messages.each do |attribute, message| %>
+    <li><%= "#{attribute.to_s.humanize} " unless attribute == :publication_orders %><%= message.to_sentence %></li>
+  <% end %>
+  </ul>
+</div>
+
+<% end %>
