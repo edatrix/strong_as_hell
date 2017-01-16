@@ -12,10 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ *= inspiration
  */
 
 .alert-form-error {
   background-color: #f2dede;
   border-color: #eed3d7;
   padding: 10px;
+}
+
+a {
+  text-decoration: none !important;
 }

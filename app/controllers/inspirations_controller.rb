@@ -1,7 +1,7 @@
 class InspirationsController < ApplicationController
 
   def index
-    @inspirations = Inspiration.all
+    @inspiration = Inspiration.where(:approved => true).sample
   end
 
   def new
@@ -15,6 +15,10 @@ class InspirationsController < ApplicationController
 
   rescue ActiveRecord::RecordInvalid
     render :new
+  end
+
+  def show
+    @inspiration = Inspiration.find(params[:id])
   end
 
   private

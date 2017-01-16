@@ -1,7 +1,26 @@
 <div class="container-fluid body">
-  <div class="jumbotron">
-    <div class="container">
-      <h1>Females are STRONG AS HELL</h1>
+  <h1>Females are STRONG AS HELL</h1>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+
+    <% if @inspiration %>
+    <div class="col-md-8">
+      <%= render "item" %>
+
+      <div class="row links">
+        <div class="col-sm-6">
+          <%= link_to "See another quote" %>
+        </div>
+        <div class="col-sm-6">
+          <%= link_to "Add an inspiring quote", new_inspiration_path %>
+        </div>
+      </div>
     </div>
+    <% else %>
+    <% end %>
+
+    <div class="col-md-2"></div>
   </div>
+
 </div>
