@@ -1,6 +1,7 @@
 class InspirationsController < ApplicationController
 
   def index
+    # @inspiration = Inspiration.where(:approved => true).sample
     @inspiration = Inspiration.where(:approved => true).sample
   end
 
@@ -19,6 +20,20 @@ class InspirationsController < ApplicationController
 
   def show
     @inspiration = Inspiration.find(params[:id])
+  end
+
+  def admin
+    @inspirations = Inspiration.all.sort_by { |i| i.name.downcase }
+  end
+
+  def approve
+    params[:inspiration_approved].each do |id, approved|
+      inspiration = Inspiration.find(id)
+      inspiration.approved = approved
+      inspiration.save
+    end
+
+    redirect_to secret_path
   end
 
   private

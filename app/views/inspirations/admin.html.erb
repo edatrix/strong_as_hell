@@ -1,0 +1,29 @@
+<div class="container-fluid body">
+  <div>
+    <%= form_tag nil, :method => "put" do %>
+      <table class="table table-striped">
+        <tr class="header">
+          <th>Name</th>
+          <th>Quote</th>
+          <th>Source</th>
+          <th>Approved?</th>
+          <th>Delete</th>
+        </tr>
+        <% @inspirations.each do |inspiration| %>
+        <tr>
+          <td><%= inspiration.name %></td>
+          <td><%= inspiration.text %></td>
+          <td><%= inspiration.url %></td>
+          <td>
+            <%= hidden_field_tag "inspiration_approved[#{inspiration.id}]", "0", :id => inspiration.id %>
+            <%= check_box_tag "inspiration_approved[#{inspiration.id}]", "1", inspiration.approved?, :id => inspiration.id %>
+          </td>
+          <td><%#= link_to "Delete", delete_inspiration_path %></td>
+        </tr>
+        <% end %>
+      </table>
+      <%= submit_tag "Save", :class => "btn btn-primary pull-right clear" %>
+      <%= link_to "See all", inspirations_path %>
+    <% end %>
+  </div>
+</div>
