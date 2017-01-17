@@ -1,3 +1,4 @@
+
 $(function () {
   $('.item').hover(function () {
     $(this).find('.text').show();

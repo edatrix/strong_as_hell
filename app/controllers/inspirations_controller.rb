@@ -1,7 +1,6 @@
 class InspirationsController < ApplicationController
 
   def index
-    # @inspiration = Inspiration.where(:approved => true).sample
     @inspiration = Inspiration.where(:approved => true).sample
   end
 
