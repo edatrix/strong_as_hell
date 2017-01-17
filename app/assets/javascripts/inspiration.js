@@ -5,3 +5,5 @@ $(function () {
     $(this).find('.text').hide();
   });
 });
+
+$('#new_inspiration').validate();

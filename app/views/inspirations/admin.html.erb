@@ -7,7 +7,6 @@
           <th>Quote</th>
           <th>Source</th>
           <th>Approved?</th>
-          <th>Delete</th>
         </tr>
         <% @inspirations.each do |inspiration| %>
         <tr>
@@ -18,7 +17,6 @@
             <%= hidden_field_tag "inspiration_approved[#{inspiration.id}]", "0", :id => inspiration.id %>
             <%= check_box_tag "inspiration_approved[#{inspiration.id}]", "1", inspiration.approved?, :id => inspiration.id %>
           </td>
-          <td><%#= link_to "Delete", delete_inspiration_path %></td>
         </tr>
         <% end %>
       </table>
