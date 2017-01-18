@@ -12,8 +12,8 @@
           <%= f.file_field :image, :label => "Image" %>
           <%= f.input :url, :label => "Image source" %>
           <%= f.input :text, :label => "Quote" %>
-          <%= f.button :submit %>
-          <%= link_to "back", inspirations_path, :class => "right" %>
+          <%= f.button :submit, :class => "right" %>
+          <%= link_to "back", inspirations_path %>
         <% end %>
       </div>
     </div>

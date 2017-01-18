@@ -1,0 +1,4 @@
+production: &production
+  aws_access_key_id: "AKIAITYYV3ZS73R6Q6AQ"
+  aws_secret_access_key: "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"
+  # AWS_S3_BUCKET_NAME: "strong-as-hell-assets"

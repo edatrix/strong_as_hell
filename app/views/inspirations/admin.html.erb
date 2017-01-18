@@ -3,6 +3,7 @@
     <%= form_tag nil, :method => "put" do %>
       <table class="table table-striped">
         <tr class="header">
+          <th>ID</th>
           <th>Name</th>
           <th>Quote</th>
           <th>Source</th>
@@ -10,6 +11,7 @@
         </tr>
         <% @inspirations.each do |inspiration| %>
         <tr>
+          <td><%= inspiration.id %></td>
           <td><%= inspiration.name %></td>
           <td><%= inspiration.text %></td>
           <td><%= inspiration.url %></td>
