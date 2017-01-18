@@ -6,6 +6,10 @@
 
     <% if @inspiration %>
     <div class="col-md-8">
+      <% if flash[:notice].present?  %>
+        <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+      <% end %>
+
       <%= render "item" %>
 
       <div class="row links">

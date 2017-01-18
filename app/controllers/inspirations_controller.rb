@@ -11,7 +11,8 @@ class InspirationsController < ApplicationController
   def create
     @inspiration = Inspiration.new(inspiration_params)
     @inspiration.save!
-    redirect_to inspirations_path
+
+    redirect_to inspirations_path, :notice => "You is kind. You is smart. You is important. Your quote will be added shortly!"
 
   rescue ActiveRecord::RecordInvalid
     render :new
