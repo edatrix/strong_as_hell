@@ -22,6 +22,26 @@ class InspirationsController < ApplicationController
     @inspiration = Inspiration.find(params[:id])
   end
 
+  def edit
+    @inspiration = Inspiration.find(params[:id])
+  end
+
+  def update
+    @inspiration = Inspiration.find(params[:id])
+
+    @inspiration.attributes = inspiration_params
+    @inspiration.save
+
+    redirect_to secret_path, :notice => "Updated inspiration #{params[:id]}"
+  end
+
+  def destroy
+    @inspiration = Inspiration.find(params[:id])
+    @inspiration.destroy
+
+    redirect_to secret_path, :notice => "Deleted inspiration"
+  end
+
   def admin
     @inspirations = Inspiration.all.sort_by { |i| i.name.downcase }
   end
@@ -33,7 +53,7 @@ class InspirationsController < ApplicationController
       inspiration.save
     end
 
-    redirect_to secret_path
+    redirect_to secret_path, :notice => "Updated"
   end
 
   private

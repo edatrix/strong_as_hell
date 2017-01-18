@@ -1,0 +1,9 @@
+<%= simple_form_for @inspiration, html: { :class => 'form-horizontal' } do |f| %>
+  <%= render "error_messages", :target => @inspiration %>
+  <%= f.input :name, :label => "Inspiring woman's name" %>
+  <%= f.file_field :image, :label => "Image" %>
+  <%= f.input :url, :label => "Image source" %>
+  <%= f.input :text, :label => "Quote" %>
+  <%= f.button :submit, :class => "right" %>
+  <%= link_to "Back to all", inspirations_path %>
+<% end %>

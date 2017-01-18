@@ -1,20 +1,27 @@
 <div class="container-fluid body">
-  <div>
+  <div class="col-md-11 space">
+    <% if flash[:notice].present?  %>
+      <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+    <% end %>
     <%= form_tag nil, :method => "put" do %>
-      <table class="table table-striped">
+      <table class="table table-striped table-bordered table-hover">
         <tr class="header">
           <th>ID</th>
           <th>Name</th>
           <th>Quote</th>
           <th>Source</th>
           <th>Approved?</th>
+          <th>edit</th>
+          <th>delete</th>
         </tr>
         <% @inspirations.each do |inspiration| %>
         <tr>
           <td><%= inspiration.id %></td>
           <td><%= inspiration.name %></td>
           <td><%= inspiration.text %></td>
-          <td><%= inspiration.url %></td>
+          <td><%= link_to "URL", inspiration.url %></td>
+          <td><%= link_to "Edit", edit_inspiration_path(inspiration) %></td>
+          <td><%= link_to "Delete", inspiration_path(inspiration), :method => :delete %></td>
           <td>
             <%= hidden_field_tag "inspiration_approved[#{inspiration.id}]", "0", :id => inspiration.id %>
             <%= check_box_tag "inspiration_approved[#{inspiration.id}]", "1", inspiration.approved?, :id => inspiration.id %>

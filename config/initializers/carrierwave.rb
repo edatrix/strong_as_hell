@@ -2,8 +2,8 @@ CarrierWave.configure do |config|
   config.fog_provider = 'fog/aws'
   config.fog_credentials = {
     provider:              'AWS',
-    :aws_access_key_id => "AKIAITYYV3ZS73R6Q6AQ",
-    :aws_secret_access_key => "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",
+    :aws_access_key_id => ENV["aws_access_key_id"],
+    :aws_secret_access_key => ENV["aws_secret_access_key"],
     :region => "us-west-2"
   }
   config.fog_directory = "strong-as-hell-assets"

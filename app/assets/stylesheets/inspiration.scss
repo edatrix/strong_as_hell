@@ -6,6 +6,10 @@ h1 {
   float: right;
 }
 
+.space {
+  margin: 20px 10px;
+}
+
 .item {
   margin: 20px 10px 10px 10px;
   position: relative;
@@ -51,4 +55,8 @@ h1 {
   p {
     margin: 20px;
   }
+}
+
+table td {
+  overflow-wrap: break-word;
 }
