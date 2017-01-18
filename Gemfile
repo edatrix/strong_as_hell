@@ -24,6 +24,7 @@ gem 'carrierwave', '~> 1.0'
 # use AWS to store uploaded assets
 gem 'aws-sdk', '~> 2'
 gem 'fog-aws'
+gem 'figaro'
 
 # deploy to heroku
 gem "rails_12factor"
