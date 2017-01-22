@@ -1,16 +1,16 @@
 <div class="container-fluid body">
-  <h1>Females are STRONG AS HELL</h1>
-
   <div class="row">
     <div class="col-md-2"></div>
 
     <% if @inspiration %>
-    <div class="col-md-8">
+    <div class="col-md-8 show-item">
       <% if flash[:notice].present?  %>
         <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
       <% end %>
 
-      <%= render "item" %>
+      <%= link_to inspiration_path(@inspiration) do %>
+        <%= render "item" %>
+      <% end %>
 
       <div class="row links">
         <div class="col-sm-6">
