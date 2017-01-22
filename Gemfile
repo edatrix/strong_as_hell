@@ -26,5 +26,7 @@ gem 'aws-sdk', '~> 2'
 gem 'fog-aws'
 gem 'figaro'
 
-# deploy to heroku
-gem "rails_12factor"
+group :production do
+  # deploy to heroku
+  gem "rails_12factor"
+end
