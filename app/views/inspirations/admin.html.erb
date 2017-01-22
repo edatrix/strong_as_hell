@@ -4,15 +4,15 @@
       <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
     <% end %>
     <%= form_tag nil, :method => "put" do %>
-      <table class="table table-striped table-bordered table-hover">
+      <table class="table table-striped table-bordered table-hover space">
         <tr class="header">
           <th>ID</th>
           <th>Name</th>
           <th>Quote</th>
           <th>Source</th>
-          <th>Approved?</th>
           <th>edit</th>
           <th>delete</th>
+          <th>Approved?</th>
         </tr>
         <% @inspirations.each do |inspiration| %>
         <tr>
